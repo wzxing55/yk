@@ -1,0 +1,21 @@
+class Solution {
+    func removeDuplicates(_ nums: inout [Int]) -> Int {
+        let numscount = nums.count
+        if(numscount <= 1){
+            return  nums.count
+        }
+        
+        var result = 1;
+        var nowInt = nums[0]
+        for i in 1..<numscount{
+            if(nums[i] != nowInt){
+                nowInt = nums[i]
+                nums[result] = nums[i]
+                result += 1
+            }
+            
+        }
+        
+        return result
+    }
+}
